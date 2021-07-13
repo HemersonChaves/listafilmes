@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import { Button } from './components/Button';
-import { MovieCard } from './components/MovieCard';
 import { Content } from './components/Content';
 
-// import { SideBar } from './components/SideBar';
+import { SideBar } from './components/SideBar';
 
 import { api } from './services/api';
 
@@ -31,7 +30,6 @@ interface MovieProps {
 export function App() {
   const [selectedGenreId, setSelectedGenreId] = useState(1);
   const [genres, setGenres] = useState<GenreResponseProps[]>([]);
-  const [movies, setMovies] = useState<MovieProps[]>([]);
   const [selectedGenre, setSelectedGenre] = useState<GenreResponseProps>({} as GenreResponseProps);
 
   useEffect(() => {
@@ -52,21 +50,8 @@ export function App() {
   }
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <nav className="sidebar">
-        <span>Watch<p>Me</p></span>
-
-        <div className="buttons-container">
-          {genres.map(genre => (
-            <Button
-              key={String(genre.id)}
-              title={genre.title}
-              iconName={genre.name}
-              onClick={() => handleClickButton(genre.id)}
-              selected={selectedGenreId === genre.id}
-            />
-          ))}
-        </div>
-      </nav>      
+      {/*https://reactjs.org/docs/faq-functions.html*/}
+      <SideBar id={selectedGenreId}  onGenreChange={handleClickButton}></SideBar>            
       <Content  id={selectedGenre.id} name={selectedGenre.name} title={selectedGenre.title}/>   
     </div>
   )
