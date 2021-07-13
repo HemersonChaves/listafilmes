@@ -67,7 +67,6 @@
     <li>
       <a href="#getting-started">Começando</a>
       <ul>
-        <li><a href="#prerequisites">Pré-requisitos</a></li>
         <li><a href="#installation">Instalação</a></li>
       </ul>
     </li>
@@ -89,11 +88,6 @@
 
 Este projeto foi baseado no desafio do curso ignite da rocketseat. Onde o mesmo busca criar uma site que lista filme divididos por categorias.
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
-
-
 ### Built With
 
 * [node.js](s)
@@ -101,20 +95,10 @@ Here's a blank template to get started:
 * [babel]()
 * [webpack]()
 
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* yarn
-  ```sh
-  yarn install
-  ```
 
 ### Installation
 
@@ -210,8 +194,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
 
 Project Link: [https://github.com/HemersonChaves/listafilmes](https://github.com/HemersonChaves/listafilmess)
 
