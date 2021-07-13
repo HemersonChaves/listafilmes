@@ -12,9 +12,6 @@ interface SideBarProps {
   onGenreChange(id: number): void;
 }
 export function SideBar(props: SideBarProps) {
-
-  const [selectedGenre, setSelectedGenre] = useState<GenreResponseProps>({} as GenreResponseProps);
-
   const [genres, setGenres] = useState<GenreResponseProps[]>([]);
   const [selectedGenreId, setSelectedGenreId] = useState(1);
 
@@ -38,5 +35,4 @@ export function SideBar(props: SideBarProps) {
       ))}
     </div>
   </nav>)
-
 }

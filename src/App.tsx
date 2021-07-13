@@ -1,14 +1,8 @@
 import { useEffect, useState } from 'react';
-
-import { Button } from './components/Button';
 import { Content } from './components/Content';
-
 import { SideBar } from './components/SideBar';
-
 import { api } from './services/api';
-
 import './styles/global.scss';
-
 import './styles/sidebar.scss';
 import './styles/content.scss';
 interface GenreResponseProps {
@@ -29,20 +23,12 @@ interface MovieProps {
 
 export function App() {
   const [selectedGenreId, setSelectedGenreId] = useState(1);
-  const [genres, setGenres] = useState<GenreResponseProps[]>([]);
   const [selectedGenre, setSelectedGenre] = useState<GenreResponseProps>({} as GenreResponseProps);
 
   useEffect(() => {
-    api.get<GenreResponseProps[]>('genres').then(response => {
-      setGenres(response.data);
-    });
-  }, []);
-
-  useEffect(() => {
     api.get<GenreResponseProps>(`genres/${selectedGenreId}`).then(response => {
-      setSelectedGenre(response.data);   
+      setSelectedGenre(response.data);
     });
-   
   }, [selectedGenreId]);
 
   function handleClickButton(id: number) {
@@ -51,8 +37,8 @@ export function App() {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       {/*https://reactjs.org/docs/faq-functions.html*/}
-      <SideBar id={selectedGenreId}  onGenreChange={handleClickButton}></SideBar>            
-      <Content  id={selectedGenre.id} name={selectedGenre.name} title={selectedGenre.title}/>   
+      <SideBar id={selectedGenreId} onGenreChange={handleClickButton}></SideBar>
+      <Content id={selectedGenre.id} name={selectedGenre.name} title={selectedGenre.title} />
     </div>
   )
 }
